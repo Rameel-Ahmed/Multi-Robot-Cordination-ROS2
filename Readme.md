@@ -1,172 +1,144 @@
-🦾 Multi-Robot Coordination with YOLOv5 and SLAM
-📌 Overview
-This project demonstrates multi-robot coordination in a simulated environment using ROS 2, Gazebo, SLAM, and YOLOv5 object detection.
-Multiple TurtleBot3 Waffle Pi robots autonomously explore and build a shared map while detecting cylindrical targets. When one robot detects a target, it communicates with others to optimize search efficiency and avoid redundant work.
+# Multi-Robot Coordination with YOLOv5 and SLAM
 
-Key Highlights:
+[![Robotics](https://img.shields.io/badge/Field-Robotics-blue?style=flat-square)](https://www.ros.org/)
+[![Simulation](https://img.shields.io/badge/Simulation-Gazebo-orange?style=flat-square)](http://gazebosim.org/)
+[![Framework](https://img.shields.io/badge/Framework-ROS2-green?style=flat-square)](https://docs.ros.org/en/humble/index.html)
 
-Multi-robot SLAM mapping
+🤖 This project implements **multi-robot coordination** in simulation, combining **SLAM**, **YOLOv5 object detection**, and **autonomous navigation** to detect and retrieve cylindrical targets using TurtleBot3 Waffle Pi robots in Gazebo.
 
-Real-time YOLOv5 object detection
+<p align="center">
+  <img src="/images/Screenshot from 2025-07-02 02-55-00.png" alt="Robots performing SLAM" width="500"/>
+  <br/>
+  <em>Multi-robot SLAM environment</em>
+</p>
 
-Inter-robot communication for coordination
+<p align="center">
+  <img src="/images/Screenshot from 2025-07-02 02-29-19.png" alt="YOLOv5 Detection" width="500"/>
+  <br/>
+  <em>YOLOv5-based target detection</em>
+</p>
 
-Autonomous exploration and navigation
+## Project Overview
 
-Task switching upon target detection
+### ❓ Problem Statement
 
-⚙️ System Architecture
-Robots: Multiple TurtleBot3 Waffle Pi
-Sensors:
+The aim was to create a **multi-robot system** capable of:
+- Mapping an unknown environment using SLAM
+- Detecting specific cylindrical targets with YOLOv5
+- Sharing detection information between robots
+- Navigating towards detected targets and avoiding obstacles autonomously
 
-2D LiDAR – for SLAM mapping & obstacle avoidance
+**Core Requirements:**
+- ROS 2-based distributed architecture
+- Real-time detection and navigation
+- Autonomous exploration and task coordination
+- Multi-sensor fusion (LiDAR + Camera)
 
-Intel RealSense R200 Camera – for YOLO-based target detection
+## 🧠 System Architecture
 
-Main Components:
+- **Robots:** TurtleBot3 Waffle Pi (multiple units)
+- **Sensors:**
+  - 2D LiDAR for mapping & obstacle avoidance
+  - Intel RealSense R200 RGB camera for YOLO-based object detection
+- **Core Nodes:**
+  - `cordination_manager.py` – Handles inter-robot communication & task allocation
+  - `smart_final_multi_yolo_detector.py` – YOLOv5 inference node
+  - `exploration_node.py` – Autonomous mapping & exploration
+  - `target_navigator.py` – Navigation towards detected targets
 
-SLAM Node (slam_toolbox)
+<p align="center">
+  <img src="Media/system_architecture.png" alt="System Architecture" width="500"/>
+  <br/>
+  <em>System architecture for multi-robot coordination</em>
+</p>
 
-Coordination Manager
+## 📐 Simulation Setup
 
-YOLO Detector
+- **Simulator:** Gazebo Fortress
+- **Robots:** Multiple TurtleBot3 Waffle Pi models
+- **Mapping:** `slam_toolbox` asynchronous mode
+- **Navigation:** ROS 2 Navigation Stack
+- **Detection:** YOLOv5 custom-trained model
 
-Exploration Node
+### LiDAR Specifications
+| Parameter | Value |
+|-----------|-------|
+| Mount Height | 5 cm |
+| FOV | 360° |
+| Angular Resolution | 0.5° (720 samples) |
+| Range | 0.12 m – 3.5 m |
+| Frequency | 10 Hz |
+| Topic | `/tb3_X/scan` |
 
-Target Navigator
+### Camera Specifications
+| Parameter | Value |
+|-----------|-------|
+| Type | RGB |
+| Model | Intel RealSense R200 |
+| Topic | `/tb3_X/camera/image_raw` |
+| Detection Model | YOLOv5 (custom-trained) |
+| Confidence Threshold | 0.7 |
 
-🛠️ Tech Stack
-ROS 2 Humble
+## 🚀 How to Run the Project
 
-Gazebo Fortress
+### Prerequisites
+- ROS 2 (Humble recommended)
+- Gazebo Fortress
+- Python 3.8+
+- YOLOv5 dependencies
+- TurtleBot3 Gazebo models
 
-TurtleBot3 Gazebo
+### Installation
+- Clone the repository:
+  ```bash
+  git clone https://github.com/your_username/multi_robot_coordination.git
 
-YOLOv5 (custom-trained)
+- Install dependencies:
+  ```bash
+  cd multi_robot_coordination rosdep install --from-paths src --ignore-src -r -y
 
-OpenCV, Pillow
+ 
+### Running the Simulation
+- Terminal 1 – Launch Simulation:
+  ```bash
+    cd ~/your_workspace_folder
+    colcon build
+    source install/setup.bash
+    export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/username/path_to_ws/src/turtlebot3_gazebo/models
+    ros2 launch turtlebot3_gazebo final_gazebo_robot_slam.launch.py
+- Terminal 2 – Coordination Manager:
+  ```bash
+    cd ~/your_workspace_folder
+    source install/setup.bash
+    python3 src/multi_robot_coordination/multi_robot_coordination/cordination_manager.py
+- Terminal 3 – YOLO Detector:
+  ```bash
+    cd ~/your_workspace_folder
+    source install/setup.bash
+    python3 src/multi_robot_coordination/multi_robot_coordination/smart_final_multi_yolo_detector.py
+- Terminal 4 – Exploration Node:
+  ```bash
+    cd ~/your_workspace_folder
+    source install/setup.bash
+    python3 src/multi_robot_coordination/multi_robot_coordination/exploration_node.py
+- Terminal 5 – Target Navigator:
+  ```bash
+    cd ~/your_workspace_folder
+    source install/setup.bash
+    python3 src/multi_robot_coordination/multi_robot_coordination/target_navigator.py
+   
+## 📊 LiDAR vs Camera
+| Feature | LiDAR | Camera (YOLOv5) |
+|---------|-------|-----------------|
+| Purpose | Mapping, obstacle avoidance | Target detection |
+| Data Type | Distance array | RGB image |
+| Detection Type | Geometric only | Semantic (class ID) |
+| ROS Topic | `/tb3_X/scan` | `/tb3_X/camera/image_raw` |
 
-ultralytics, PyTorch
-
-Navigation2, slam_toolbox
-
-📂 Project Structure
-bash
-Copy
-Edit
-src/multi_robot_coordination/
-│── multi_robot_coordination/
-│   ├── cordination_manager.py
-│   ├── smart_final_multi_yolo_detector.py
-│   ├── exploration_node.py
-│   ├── target_navigator.py
-│   └── yolo_weights/
-└── turtlebot3_gazebo/
-    └── models/
-🚀 How to Run the Project
-Note: Replace /home/your_username/... with your actual paths.
-Always run these in order: Terminal 1 → Terminal 5.
-
-Terminal 1 — Launch Simulation
-bash
-Copy
-Edit
-cd ~/your_workspace_folder
-colcon build
-source install/setup.bash
-export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:/home/your_username/path_to_ws/src/turtlebot3_gazebo/models
-ros2 launch turtlebot3_gazebo final_gazebo_robot_slam.launch.py
-Terminal 2 — Coordination Manager
-bash
-Copy
-Edit
-cd ~/your_workspace_folder
-source install/setup.bash
-python3 src/multi_robot_coordination/multi_robot_coordination/cordination_manager.py
-Terminal 3 — YOLO Detector
-Edit slam_final_multi_yolo_detector.py to set YOLO weights path:
-
-python
-Copy
-Edit
-'/home/your_username/path_to_ws/src/multi_robot_coordination/multi_robot_coordination/yolo_weights/best.pt'
-Then:
-
-bash
-Copy
-Edit
-cd ~/your_workspace_folder
-source install/setup.bash
-python3 src/multi_robot_coordination/multi_robot_coordination/smart_final_multi_yolo_detector.py
-Terminal 4 — Exploration Node
-bash
-Copy
-Edit
-cd ~/your_workspace_folder
-source install/setup.bash
-python3 src/multi_robot_coordination/multi_robot_coordination/exploration_node.py
-Terminal 5 — Target Navigator
-bash
-Copy
-Edit
-cd ~/your_workspace_folder
-source install/setup.bash
-python3 src/multi_robot_coordination/multi_robot_coordination/target_navigator.py
-🔍 Sensor Configuration & Roles
-1️⃣ LiDAR
-Type: 2D ray-based LiDAR (rplidar)
-
-Mount Height: 5 cm from base
-
-FOV: 360°
-
-Angular Resolution: 0.5° (720 samples)
-
-Range: 0.12 m – 3.5 m
-
-Frequency: 10 Hz
-
-Topic: /tb3_X/scan
-
-Purpose: SLAM mapping & obstacle avoidance
-
-Implementation: Defined in model.sdf and published via gazebo_ros_ray_sensor plugin
-
-Visualization in Gazebo: Blue ring of rays indicating laser scans.
-
-2️⃣ Camera (Intel RealSense R200)
-Type: RGB camera
-
-Topic: /tb3_X/camera/image_raw
-
-Purpose: YOLO-based target detection
-
-Model Path: /yolo_weights/best.pt
-
-Implementation: Simulated via gazebo_ros_camera plugin, processed in smart_final_multi_yolo_detector.py
-
-Output: Bounding boxes & confidence scores for detected targets
-
-📊 LiDAR vs Camera
-Feature	LiDAR	Camera (YOLO)
-Purpose	Mapping, obstacle avoidance	Target detection
-Data Type	Distance array	RGB image
-Detection Type	Geometric only	Semantic (class ID)
-ROS Topic	/tb3_X/scan	/tb3_X/camera/image_raw
-
-🗂️ Key Files
-LiDAR Definition:
-src/turtlebot3_gazebo/models/turtlebot3_waffle_X/model.sdf
-
-YOLO Detector:
-src/multi_robot_coordination/multi_robot_coordination/smart_final_multi_yolo_detector.py
-
-Coordination Logic:
-cordination_manager.py
-
-Exploration Logic:
-exploration_node.py
-
-Target Navigation:
-target_navigator.py
-
+<p align="center">
+  <a href="/images/Screencast from 17-06-2025 22:30:46.webm">
+    <img src="/images/Screenshot from 2025-07-02 02-29-08.png" alt="Multi-Robot Coordination Demo" width="500"/>
+  </a>
+  <br/>
+  <em>Click to watch the Multi-Robot Coordination demo video</em>
+</p>
