@@ -137,7 +137,7 @@ The aim was to create a **multi-robot system** capable of:
 
 <p align="center">
   <a href="/images/Screencast from 17-06-2025 22_30_46.mp4">
-    <img  alt="Multi-Robot Coordination Demo" width="500"/>
+    <img src="/images/Screenshot from 2025-07-02 02-29-08.png" alt="Multi-Robot Coordination Demo" width="500"/>
   </a>
   <br/>
   <em>Click to watch the Multi-Robot Coordination demo video</em>
