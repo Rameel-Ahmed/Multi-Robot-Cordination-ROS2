@@ -46,11 +46,7 @@ The aim was to create a **multi-robot system** capable of:
   - `exploration_node.py` – Autonomous mapping & exploration
   - `target_navigator.py` – Navigation towards detected targets
 
-<p align="center">
-  <img src="Media/system_architecture.png" alt="System Architecture" width="500"/>
-  <br/>
-  <em>System architecture for multi-robot coordination</em>
-</p>
+
 
 ## 📐 Simulation Setup
 
