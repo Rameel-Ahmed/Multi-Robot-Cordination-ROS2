@@ -1,0 +1,42 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from multi_robot_coordination/msg/CylinderDetection.msg
+// generated code does not contain a copyright notice
+
+#include "std_msgs/msg/Header.idl"
+
+module multi_robot_coordination {
+  module msg {
+    typedef double double__4[4];
+    struct CylinderDetection {
+      boolean detected;
+
+      string robot_namespace;
+
+      double x;
+
+      double y;
+
+      double z;
+
+      double u;
+
+      double v;
+
+      double confidence;
+
+      double__4 xyxy;
+
+      double x_min;
+
+      double y_min;
+
+      double x_max;
+
+      double y_max;
+
+      double image_width;
+
+      std_msgs::msg::Header header;
+    };
+  };
+};

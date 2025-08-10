@@ -1,0 +1,9 @@
+setup.py
+multi_robot_coordination/__init__.py
+multi_robot_coordination.egg-info/PKG-INFO
+multi_robot_coordination.egg-info/SOURCES.txt
+multi_robot_coordination.egg-info/dependency_links.txt
+multi_robot_coordination.egg-info/top_level.txt
+multi_robot_coordination/msg/__init__.py
+multi_robot_coordination/msg/_cylinder_detection.py
+multi_robot_coordination/msg/_cylinder_detection_multi.py

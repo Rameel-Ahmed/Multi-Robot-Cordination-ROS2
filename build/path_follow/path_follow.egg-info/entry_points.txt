@@ -1,0 +1,4 @@
+[console_scripts]
+path_follow = path_follow.path_follow:main
+path_follow5 = path_follow.path_follow5:main
+

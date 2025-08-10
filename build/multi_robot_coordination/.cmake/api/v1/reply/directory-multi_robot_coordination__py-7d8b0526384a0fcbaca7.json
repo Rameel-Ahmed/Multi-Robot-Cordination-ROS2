@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "multi_robot_coordination__py",
+		"source" : "/home/rameel/Documents/final_output_nomap_and_SLAM_multiple/build/multi_robot_coordination/multi_robot_coordination__py"
+	}
+}

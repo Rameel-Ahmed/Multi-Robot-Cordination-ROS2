@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-df29cf5e3730a92afc0a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "multi_robot_coordination__py",
+					"jsonFile" : "directory-multi_robot_coordination__py-7d8b0526384a0fcbaca7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/rameel/Documents/final_output_nomap_and_SLAM_multiple/build/multi_robot_coordination/multi_robot_coordination__py",
+					"targetIndexes" : 
+					[
+						4
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "multi_robot_coordination",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_multi_robot_coordination_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_multi_robot_coordination_egg-319edb1d0fbe39011121.json",
+					"name" : "ament_cmake_python_build_multi_robot_coordination_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_copy_multi_robot_coordination::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_copy_multi_robot_coordination-141eacb36e4f6eb01071.json",
+					"name" : "ament_cmake_python_copy_multi_robot_coordination",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination-2a3e1d47bc96ff2f45ea.json",
+					"name" : "multi_robot_coordination",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__cpp-b1ec82650bc9803b5955.json",
+					"name" : "multi_robot_coordination__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "multi_robot_coordination__py::@040f57876397dd2c8f49",
+					"jsonFile" : "target-multi_robot_coordination__py-2c645c97029bcebe2a8b.json",
+					"name" : "multi_robot_coordination__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_generator_c-cd0b5a8095a15210bb31.json",
+					"name" : "multi_robot_coordination__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_generator_py-233111e4fd9dd716f409.json",
+					"name" : "multi_robot_coordination__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_c-171083b96e68bf31526e.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_c__pyext-fcd7fb906acc07c0f0dd.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_cpp-813c6dae0d50e70ebd85.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_fastrtps_c-cd2e5b577d3497b7dbb3.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_fastrtps_c__pyext-0ee5dc591a0134bd4d97.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_fastrtps_cpp-3d908687cd384256b33d.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_introspection_c-6f558179ee2871045a36.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_introspection_c__pyext-e5406c66db13e58e0e2c.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination__rosidl_typesupport_introspection_cpp-3d24afd787b450ad179d.json",
+					"name" : "multi_robot_coordination__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "multi_robot_coordination_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-multi_robot_coordination_uninstall-3fe38535ce4220725572.json",
+					"name" : "multi_robot_coordination_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-d1212d9e1e0665428197.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/rameel/Documents/final_output_nomap_and_SLAM_multiple/build/multi_robot_coordination",
+		"source" : "/home/rameel/Documents/final_output_nomap_and_SLAM_multiple/src/multi_robot_coordination"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

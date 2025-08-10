@@ -1,0 +1,7 @@
+{
+  "package_name": "multi_robot_coordination",
+  "non_idl_tuples": [
+    "/home/rameel/Documents/final_output_nomap_and_SLAM_multiple/src/multi_robot_coordination:msg/CylinderDetection.msg",
+    "/home/rameel/Documents/final_output_nomap_and_SLAM_multiple/src/multi_robot_coordination:msg/CylinderDetectionMulti.msg"
+  ]
+}
