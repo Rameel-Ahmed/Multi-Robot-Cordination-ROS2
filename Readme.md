@@ -136,9 +136,8 @@ The aim was to create a **multi-robot system** capable of:
 | ROS Topic | `/tb3_X/scan` | `/tb3_X/camera/image_raw` |
 
 <p align="center">
-  <a href="/images/ezgif-1106f4facf1899.gif">
-    <img src="/images/Screenshot from 2025-07-02 02-29-08.png" alt="Multi-Robot Coordination Demo" width="500"/>
-  </a>
+  <img src="/images/ezgif-1106f4facf1899.gif" alt="Multi-Robot Coordination Demo" width="500"/>
   <br/>
-  <em>Click to watch the Multi-Robot Coordination demo video</em>
+  <em>Multi-Robot Coordination demo in action</em>
 </p>
+
